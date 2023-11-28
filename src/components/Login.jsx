@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
-import UserContextProvider from "../context/UserContextProvider";
+import React, { useContext, useState } from "react";
+import UserContext from "../context/UserContext";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setUser } = useContext(UserContextProvider);
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ const Login = () => {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
-      />
+      />{" "}
       <input
         type="password"
         value={password}
